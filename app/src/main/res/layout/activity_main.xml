@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Choose your Location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:id="@+id/textLocation"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"/>
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_close_black_24dp"
+        android:id="@+id/closeLocation"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textLocation"
+        android:layout_marginTop="40dp"
+        android:weightSum="10.0"
+        android:id="@+id/layoutLoacationSearch"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7.0"
+            android:hint="Enter PIN Code"
+            android:paddingStart="20dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/backround_search_bar"
+            android:id="@+id/pincode"
+            android:maxLines="1"
+            android:maxLength="6"
+            android:inputType="number"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.0"
+            android:text="Check"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/background_button_location"
+            android:id="@+id/check"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutLoacationSearch"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/TextBarLocation">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_my_location_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Current Location"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/pink"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/textSelectLoaction"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/TextBarLocation"
+        app:layout_constraintBottom_toTopOf="@+id/BottomLayoutLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ConsL"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textNamePlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Name: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textName"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textNamePlaceHolder"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="New Delhi G.P.O"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textPINcodePlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textNamePlaceHolder"
+                android:text="PIN Code: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textPINCode"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textPINcodePlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textName"
+                android:text="110001"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textBranchTypePlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textPINcodePlaceHolder"
+                android:text="Branch Type: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textBranchType"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textBranchTypePlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textPINCode"
+                android:text="Head Post Office"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textDeliveryStatusPlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textBranchTypePlaceHolder"
+                android:text="Delivery Status: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textDeliveryStatus"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textDeliveryStatusPlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textBranchType"
+                android:text="DeliveryStatus"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textCirclePlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDeliveryStatusPlaceHolder"
+                android:text="Circle: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textCircle"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textCirclePlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textDeliveryStatus"
+                android:text="New Delhi"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textDistrictPlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textCirclePlaceHolder"
+                android:text="District: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textDistrict"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textDistrictPlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textCircle"
+                android:text="New Delhi"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textDivisionPlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDistrictPlaceHolder"
+                android:text="Division: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textDivision"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textDivisionPlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textDistrict"
+                android:text="New Delhi GPO"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textRegionPlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDivisionPlaceHolder"
+                android:text="Region: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textRegion"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textRegionPlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textDivision"
+                android:text="Delhi"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textBlockPlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textRegionPlaceHolder"
+                android:text="Block: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textBlock"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textBlockPlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textRegion"
+                android:text="Delhi"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textStatePlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textBlockPlaceHolder"
+                android:text="State: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textState"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textStatePlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textBlock"
+                android:text="Delhi"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textCountryPlaceHolder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textStatePlaceHolder"
+                android:text="Country: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/textCountry"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/textCountryPlaceHolder"
+                app:layout_constraintTop_toBottomOf="@id/textState"
+                android:text="India"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingStart="15dp"
+        android:paddingEnd="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/background_just_grey"
+        android:id="@+id/BottomLayoutLocation">
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/bgcircle"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serving more than 4,000 towns and cities in India."
+            android:layout_marginStart="20dp"
+            android:id="@+id/textDelivery"/>
+
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:alpha="0.4"
+        android:background="#000000"
+        android:id="@+id/progressOverlay"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="3dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/white"
+            android:visibility="visible"
+            android:id="@+id/overlaycard">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="15dp">
+
+                <ProgressBar
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:indeterminate="true"
+                    android:layout_gravity="center"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

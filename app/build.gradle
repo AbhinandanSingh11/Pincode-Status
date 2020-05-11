@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.abhinandan.findallindiapincode"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+
+    // Google Material Design
+    implementation 'com.google.android.material:material:1.1.0'
+
+    // location api
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    // Android Support Libraries
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha02'
+
+    // Android Support Library
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    // Glide Libraries
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    // Circular Image
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    // IOS Dialog
+    implementation 'com.gdacciaro:iosdialog:1.0.3'
+    implementation 'com.itlgl:iosdialog:1.0.0'
+
+    // Volley Library
+    implementation 'com.android.volley:volley:1.1.1'
+
+
+    // Android Support Library
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+
+    // Lottie
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
+    //misc
+    implementation 'com.dmitrymalkovich.android:material-design-dimens:1.4'
+    implementation('com.thebluealliance:spectrum:0.7.1') {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
